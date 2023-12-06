@@ -1,0 +1,30 @@
+header {
+	padding: 2% 5%;
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: end;
+		margin-bottom: 1rem;
+		a {
+			img {
+				width: 30%;
+				mix-blend-mode: darken;
+			}
+		}
+
+		div {
+			display: flex;
+			gap: 1rem;
+			a {
+				font-size: 1.5rem;
+			}
+		}
+	}
+    section {
+        input {
+            width: 30%;
+            margin: 3rem auto;
+            display: block;
+        }
+    }
+}

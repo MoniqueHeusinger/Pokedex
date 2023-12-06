@@ -1,9 +1,11 @@
+import PokemonGallery from "../components/Pokemons/PokemonGallery";
+
 const Home = () => {
-    return ( 
-        <>
-        <h1>Home</h1>
-        </>
-     );
-}
- 
+	return (
+		<>
+			<PokemonGallery />
+		</>
+	);
+};
+
 export default Home;
