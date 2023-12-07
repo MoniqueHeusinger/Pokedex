@@ -22,46 +22,24 @@ const PokemonGallery = () => {
 		setStartIndex((prevIndex) => Math.max(0, prevIndex - itemsPerPage));
 	};
 
-	return (
-		<section className='gallerWrapper'>
-			{myData.data ? (
-				<>
-					<button onClick={handlePrevClick}>
-						<RightArrow />
-					</button>
-					<section className='gallery'>
-						{myData.data
-							.slice(startIndex, startIndex + itemsPerPage)
-							.map((pokemon) => (
-								<PokemonCard
-									key={uuidv4()}
-									name={pokemon.species.name}
-									image={
-										pokemon.sprites.other[
-											"official-artwork"
-										].front_shiny
-											? pokemon.sprites.other[
-													"official-artwork"
-											  ].front_shiny
-											: pokemon.sprites.other.home
-													.front_default
-									}
-									id={pokemon.id}
-									abilities
-								/>
-							))}
-					</section>
-					<button onClick={handleNextClick}>
-						<LeftArrow />
-					</button>
-				</>
-			) : (
-				<img
-					className='loadingImg'
-					src='../../../public/img/loadingDragon.gif'
-					alt='Loading...'
-				/>
-			)}
+return (
+    <section className="galleryWrapper" >
+    {myData.data ? (
+        <>
+        <button onClick={handlePrevClick}><RightArrow/></button>
+		<section className="gallery">
+        {myData.data.slice(startIndex, startIndex + itemsPerPage).map((pokemon) => (
+            <PokemonCard
+            key={uuidv4()}
+            name={pokemon.species.name}
+            image={
+                pokemon.sprites.other["official-artwork"].front_shiny
+                ? pokemon.sprites.other["official-artwork"].front_shiny
+                : pokemon.sprites.other.home.front_default
+            }
+            id={pokemon.id}
+            />
+        ))}
 		</section>
 	);
 };

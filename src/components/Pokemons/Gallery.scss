@@ -1,56 +1,53 @@
-.gallerWrapper {
-	width: 90vw;
-	height: fit-content;
-	display: flex;
-	border: 1px solid black;
-	margin: auto;
-	padding: 20px 20px;
-}
+.galleryWrapper {
+    // border: 3px green solid;
+    display: flex;
 
-.gallery {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
-	justify-content: center;
-	margin: 0 auto;
-	width: 100%;
-	place-items: center;
-	gap: 0.5rem;
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        place-items: center;
+        gap: 0.5rem;
 
-	article {
-		// background-color: dimgray;
-		padding: 0 5% 5% 5%;
-		width: 60%;
-		aspect-ratio: 2/2;
-		display: flex;
-		flex-direction: column;
-		border-radius: 1rem;
-	}
+        // ================
+        //      Card
+        // ================
 
-	img {
-		// neue Version (ohne Podest)
-		margin: 0 auto;
-		flex-grow: 2;
-		width: 80%;
+        a {
+            article {
+                margin: 0 auto;
+                padding: 0 5% 5% 5%;
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                border-radius: 1rem;
+            }
 
-		// Pokeman Ball Podest
-		// width: 90%;
-		// margin: 1rem auto;
-		// background: url(../../../public/img/stand.png) 50% 80% / 100% no-repeat;
-		// padding: 10%;
-	}
+            img {
+                // neue Version (ohne Podest)
+                margin: 0 auto;
+                flex-grow: 2;
+                width: 80%;
+            }
 
-	div {
-		display: flex;
-		justify-content: space-evenly;
-		gap: 2rem;
-		// Pokeman Ball Podest
-		// margin-top: 2rem;
+            div {
+                display: flex;
+                justify-content: space-evenly;
+                gap: 2rem;
+                // Pokeman Ball Podest
+                // margin-top: 2rem;
 
-		h2 {
-			margin-top: 10px;
-			font-family: "Poppins-Bd";
-			font-size: 1rem;
-			text-transform: uppercase;
-		}
-	}
+                h2 {
+                    margin-top: 10px;
+                    font-family: "Poppins-Bd";
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    button {
+        background: transparent;
+        border: none;
+    }
 }
