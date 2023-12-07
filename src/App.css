@@ -1,8 +1,63 @@
+/* ****************************
+        General
+**************************** */
+@font-face {
+    font-family: "Pokemon";
+    src: url("./assets/font/Pokemon_Solid.ttf");
+}
+
+@font-face {
+    font-family: "Pokemon-Hallow";
+    src: url("./assets/font/Pokemon_Hollow.ttf");
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("./assets/font/Poppins-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Poppins-Bd";
+    src: url("./assets/font/Poppins-Bold.ttf");
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     cursor: url(../public/img/closeballcursor.png), auto;
+}
+
+:root {
+    --bg-light: rgb(255, 250, 234);
+    --bg-medium: #FFF7CD;
+    --pokemon-blue: #0571C0;
+    --pokemon-blue-two: #03566f;
+    --pokemon-blue-dark: #08346F;
+    --pokemon-yellow: #FFCC00;
+    --pokemon-yellow2:#ffd9000;
+    --pokemon-red: #760D00;
+}
+
+body {
+    /* background-color: var(--bg-light); */
+    /* Background */
+    /* Weniger Orange am Rand 
+       -----------------------*/
+    background: radial-gradient(circle, rgba(255,247,205,1) 14%, rgba(255,204,0,1) 89%, rgba(255,151,0,1) 100%);
+
+    /* Mehr Orange am Rand 
+    -----------------------*/
+    /* background: radial-gradient(circle, rgba(255,247,205,1) 14%, rgba(255,204,0,1) 83%, rgba(255,151,0,1) 98%); */
+
+    /* Radial mit Stufen
+    -----------------------*/
+    /* background-image: radial-gradient(circle at center center, #fff7cd, #ffd900), repeating-radial-gradient(circle at center center, #fff7cd, #fff7cd, 22px, transparent 44px, transparent 22px);
+    background-blend-mode: multiply;
+    background-color: #ffd900; */
+
+    min-height: 100vh;
+    font-family: "Poppins";
 }
 
 a {
@@ -15,12 +70,8 @@ img {
     max-width: 100%;
 }
 
-body {
-    background-color: rgb(255, 247, 205);
-    min-height: 100vh;
-}
 
-
+/* Pikachu Animated Sticker */
 .pokemonRight {
     width: 350px;
     height: 200px;
