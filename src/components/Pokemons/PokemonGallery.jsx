@@ -18,8 +18,12 @@ const PokemonGallery = () => {
 							image={
 								pokemon.sprites.other["official-artwork"]
 									.front_shiny
+									? pokemon.sprites.other["official-artwork"]
+											.front_shiny
+									: pokemon.sprites.other.home
+											.front_default
 							}
-							weight={pokemon.weight}
+							id={pokemon.id}
 						/>
 				  ))
 				: console.log("loading")}

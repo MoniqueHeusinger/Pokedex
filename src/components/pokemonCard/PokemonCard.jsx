@@ -4,7 +4,7 @@ import {v4 as uuidv4} from "uuid"
 
 
 
-const PokemonCard = ({name, image, weight}) => {
+const PokemonCard = ({name, image, id}) => {
     return (
 		<article>
 			<img
@@ -13,7 +13,7 @@ const PokemonCard = ({name, image, weight}) => {
 			/>
 			<div>
 				<h2>{name}</h2>
-				<h2>weight: {weight}</h2>
+				<h2># {id}</h2>
 			</div>
 		</article>
 	);
