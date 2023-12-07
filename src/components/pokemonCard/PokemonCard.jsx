@@ -10,7 +10,7 @@ const PokemonCard = ({ name, image, weight, id }) => {
         <img src={image} alt="" />
         <div>
           <h2>{name}</h2>
-          <h2>weight: {weight}</h2>
+          {/* <h2>weight: {weight}</h2> */}
         </div>
       </article>
     </Link>

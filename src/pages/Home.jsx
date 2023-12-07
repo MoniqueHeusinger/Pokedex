@@ -15,7 +15,7 @@ const Home = () => {
 				<PokemonGallery />
 			</fieldset>
 			
->>>>>>>>> Temporary merge branch 2
+
 		</main>
 	);
 };
