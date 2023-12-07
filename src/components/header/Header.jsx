@@ -36,34 +36,33 @@ const Header = () => {
 
   console.log(fetchState);
 
+  console.log(fetchState);
 
-	console.log(fetchState);
-
-	return (
-		<header>
-			{/* ------------------------
+  return (
+    <header>
+      {/* ------------------------
 				Header 2. Version
 				------------------------ */}
-			{/* Navigation */}
-			<nav>
-				<NavLink>HoMe</NavLink>
-				{/* <NavLink>Types</NavLink> */}
-				<NavLink>TeaM</NavLink>
-			</nav>
+      {/* Navigation */}
+      <nav>
+        <NavLink>HoMe</NavLink>
+        <NavLink to="/filter-options">Types</NavLink>
+        <NavLink>TeaM</NavLink>
+      </nav>
 
-			{/* Suchleiste */}
-			<section>
-				<input
-					type='text'
-					placeholder='Pokémon Search...'
-					onChange={(e) => setSearchInput(e.target.value)}
-				/>
-			</section>
+      {/* Suchleiste */}
+      <section>
+        <input
+          type="text"
+          placeholder="Pokémon Search..."
+          onChange={(e) => setSearchInput(e.target.value)}
+        />
+      </section>
 
-			{/* ------------------------
+      {/* ------------------------
 				Header 1. Version
 				------------------------ */}
-			{/* <nav>
+      {/* <nav>
 				<Link>
 					 <img
 						src={logo}
@@ -83,9 +82,8 @@ const Header = () => {
 					onChange={(e) => setSearchInput(e.target.value)}
 				/>
 			</section> */}
-		</header>
-	);
-
+    </header>
+  );
 };
 
 export default Header;

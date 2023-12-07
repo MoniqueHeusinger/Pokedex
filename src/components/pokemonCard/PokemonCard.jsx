@@ -17,7 +17,4 @@ const PokemonCard = ({ name, image, weight, id }) => {
   );
 };
 
-
- 
 export default PokemonCard;
-

@@ -8,6 +8,8 @@ import Details from "./components/Details/Details";
 import MoreAbilities from "./components/moreDetails/MoreAbilities";
 import MoreMoves from "./components/moreDetails/MoreMoves";
 import MoreTypes from "./components/moreDetails/MoreTypes";
+import FilterOptions from "./components/filterOptions/FilterOptions";
+import FilterResults from "./components/filterResults/FilterResults";
 
 function App() {
   const [data, setData] = useState([]);
@@ -29,7 +31,9 @@ function App() {
             <Route path="/details/:id" element={<Details />} />
             <Route path="/more-abilities/:id" element={<MoreAbilities />} />
             <Route path="/more-moves/:id" element={<MoreMoves />} />
-            <Route path="more-types/:id" element={<MoreTypes />} />
+            <Route path="/more-types/:id" element={<MoreTypes />} />
+            <Route path="/filter-options" element={<FilterOptions />} />
+            <Route path="/filter-results/:id" element={<FilterResults />} />
           </Routes>
         </FetchData.Provider>
       </LoadingDone.Provider>
