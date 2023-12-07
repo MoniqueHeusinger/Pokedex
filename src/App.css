@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: url(../public/img/closeballcursor.png), auto;
 }
 
 a {
@@ -15,5 +16,18 @@ img {
 }
 
 body {
-    background-color: rgb(255, 247, 205)
+    background-color: rgb(255, 247, 205);
+    min-height: 100vh;
 }
+
+
+.pokemonRight {
+    width: 350px;
+    height: 200px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background: url(../public/img/background.gif) center / contain no-repeat;
+}
+
+

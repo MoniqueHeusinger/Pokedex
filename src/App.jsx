@@ -9,7 +9,7 @@ function App() {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState([]);
 	useEffect(() => {
-		if (data.length === 1192) {
+		if (data.length === 1280) {
 			LoadingDone = true;
 		}
 	}, [data]);
@@ -17,6 +17,7 @@ function App() {
 		<>
 			<LoadingDone.Provider value={{ loading, setLoading }}>
 				<FetchData.Provider value={{ data, setData }}>
+					<div className="pokemonRight"></div>
 					<Header />
 					<Routes>
 						<Route
