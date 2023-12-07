@@ -14,8 +14,6 @@ const Home = () => {
 				{/* <Filterbar />	 */}
 				<PokemonGallery />
 			</fieldset>
-
-			<PokemonGallery />
 		</main>
 	);
 };
