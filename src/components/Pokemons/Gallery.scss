@@ -1,24 +1,32 @@
+.gallerWrapper{
+    width: 90vw;
+    height: fit-content;
+    display: flex;
+    border: 1px solid black;
+    margin:auto ;
+    padding: 20px 20px;
+
+}
+
+
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+    grid-template-columns: repeat(4,1fr);
     justify-content: center;
     margin: 0 auto;
     width: 100%;
     place-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
 
 
     article {
         background-color: dimgray;
         padding: 0 5% 5% 5%;
-        width: 85%;
+        width: 60%;
         aspect-ratio: 2/2;
         display: flex;
         flex-direction: column ;
         border-radius: 1rem;
-        &:hover {
-            cursor: url(../../../public/img/openballcursor.png), auto;
-        }
     }
     img {
         width: 90%;

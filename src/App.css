@@ -2,8 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: url(../public/img/closeballcursor.png), auto;
 }
+/* cursor{
+    cursor: url(../public/img/closeballcursor.png), auto;
+    position: center;
+    
+} */
 
 a {
     text-decoration: none;
@@ -31,3 +35,7 @@ body {
 }
 
 
+button{
+    background: transparent;
+    border: none;
+}
