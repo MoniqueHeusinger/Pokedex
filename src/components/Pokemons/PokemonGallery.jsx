@@ -22,7 +22,7 @@ const PokemonGallery = () => {
     };
 
 return (
-    <section className="gallerWrapper" >
+    <section className="galleryWrapper" >
     {myData.data.length === 1292 ? (
         <>
         <button onClick={handlePrevClick}><RightArrow/></button>

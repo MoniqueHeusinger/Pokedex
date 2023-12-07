@@ -13,7 +13,7 @@ const Home = () => {
         <PokemonGallery />
       </fieldset>
 
-      <PokemonGallery />
+
     </main>
   );
 };
