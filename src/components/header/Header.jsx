@@ -78,12 +78,6 @@ const Header = () => {
         <NavLink to="/filter-options">Types</NavLink>
         <NavLink>TeaM</NavLink>
       </nav>
-      {/* Navigation */}
-      <nav>
-        <NavLink>HoMe</NavLink>
-
-        <NavLink>TeaM</NavLink>
-      </nav>
 
       {/* Suchleiste */}
       <section>
