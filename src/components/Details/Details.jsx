@@ -2,39 +2,41 @@ import { useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { FetchData } from "../../context/Context";
 import "./Details.css";
-import { SassColor } from "sass";
 import { Link } from "react-router-dom";
 
 const Details = () => {
-  const pokeParams = useParams();
-  // console.log(pokeParams);
-  const [poke, setPoke] = useState({});
+	const pokeParams = useParams();
+	const [poke, setPoke] = useState({});
 
-  const myData = useContext(FetchData);
+	const myData = useContext(FetchData);
 
-  const singelData = myData.data.find(
-    (dataItem) => dataItem.id.toString() === pokeParams.id.toString()
-  );
+	const singelData = myData.data.find(
+		(dataItem) => dataItem.id.toString() === pokeParams.id.toString(),
+	);
 
-  useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokeParams.id}`)
-      .then((res) => res.json())
-      .then((data) => setPoke(data));
-  }, []);
+	useEffect(() => {
+		fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokeParams.id}`)
+			.then((res) => res.json())
+			.then((data) => setPoke(data));
+	}, [pokeParams]);
 
-  return (
-    <>
-      {singelData ? (
-        <section className="Details">
-          <div>
-            <h3>{singelData.species.name} </h3>
-            <h3>#00{singelData.id} </h3>
-          </div>
-          <img
-            src={singelData.sprites.other["official-artwork"].front_shiny}
-            alt=""
-          />
 
+	return (
+		<>
+			{singelData ? (
+				<section className='Details'>
+					<div>
+						<h3>{singelData.species.name} </h3>
+						<h3>#00{singelData.id} </h3>
+					</div>
+					<img
+						src={
+							singelData.sprites.other["official-artwork"]
+								.front_shiny
+						}
+						alt=''
+					/>
+              
           <div>
             <h4> Height: </h4>
             <p>{singelData.height} m</p>
