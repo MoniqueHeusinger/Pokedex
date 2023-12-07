@@ -1,0 +1,26 @@
+.filterbar {
+    margin-block: -50px 50px;
+
+    h2 {
+        text-align: center;
+        font-family: "Poppins-Bd";
+        font-size: 1rem;
+    }
+
+    div {
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 0px;
+        background: linear-gradient(174deg, rgba(252, 252, 252, 1) 39%, rgba(191, 191, 191, 1) 89%);
+        border-radius: 20% 28% 17% 0% / 76% 0% 77% 24%;
+
+        button {
+            padding: 5px;
+            height: 30px;
+            border: none;
+            font-size: 1rem;
+            background-color: transparent;
+        }
+    }
+}

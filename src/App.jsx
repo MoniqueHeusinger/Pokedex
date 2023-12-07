@@ -7,6 +7,7 @@ import { FetchData, LoadingDone } from "./context/Context";
 import Details from "./components/Details/Details";
 
 function App() {
+
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState([]);
 
@@ -19,6 +20,7 @@ function App() {
     <>
       <LoadingDone.Provider value={{ loading, setLoading }}>
         <FetchData.Provider value={{ data, setData }}>
+          <div className="pokemonRight"></div>
           <Header />
 
           <Routes>
@@ -29,6 +31,7 @@ function App() {
       </LoadingDone.Provider>
     </>
   );
+
 }
 
 export default App;

@@ -36,27 +36,56 @@ const Header = () => {
 
   console.log(fetchState);
 
-  return (
-    <header>
-      <nav>
-        <Link>
-          <img src={logo} alt="" />
-        </Link>
-        <div>
-          <NavLink>Home</NavLink>
-          <NavLink>Types</NavLink>
-          <NavLink>Our Team</NavLink>
-        </div>
-      </nav>
-      <section>
-        <input
-          type="text"
-          placeholder="Search..."
-          onChange={(e) => setSearchInput(e.target.value)}
-        />
-      </section>
-    </header>
-  );
+
+	console.log(fetchState);
+
+	return (
+		<header>
+			{/* ------------------------
+				Header 2. Version
+				------------------------ */}
+			{/* Navigation */}
+			<nav>
+				<NavLink>HoMe</NavLink>
+				{/* <NavLink>Types</NavLink> */}
+				<NavLink>TeaM</NavLink>
+			</nav>
+
+			{/* Suchleiste */}
+			<section>
+				<input
+					type='text'
+					placeholder='Pokémon Search...'
+					onChange={(e) => setSearchInput(e.target.value)}
+				/>
+			</section>
+
+			{/* ------------------------
+				Header 1. Version
+				------------------------ */}
+			{/* <nav>
+				<Link>
+					 <img
+						src={logo}
+						alt=''
+					/> 
+				</Link>
+				<div>
+					<NavLink>Home</NavLink>
+					<NavLink>Types</NavLink>
+					<NavLink>Our Team</NavLink>
+				</div>
+			</nav>
+			<section>
+				<input
+					type='text'
+					placeholder='Search...'
+					onChange={(e) => setSearchInput(e.target.value)}
+				/>
+			</section> */}
+		</header>
+	);
+
 };
 
 export default Header;
