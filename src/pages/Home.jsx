@@ -4,6 +4,7 @@ import "./Home.scss"
 const Home = () => {
 	return (
 		<main>
+
 			<fieldset>
 				<legend>
 					{/* Pokemon Logo */}
@@ -14,6 +15,10 @@ const Home = () => {
 				<PokemonGallery />
 			</fieldset>
 			
+
+			<PokemonGallery />
+
+
 		</main>
 	);
 };
