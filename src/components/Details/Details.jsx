@@ -47,11 +47,11 @@ const Details = () => {
           </div>
           <div>
             <h4> Color: </h4>
-            <p>{poke.color.name}</p>
+            <p>{poke?.color?.name}</p>
           </div>
           <div>
             <h4> Habitat: </h4>
-            <p>{poke.habitat.name}</p>
+            <p>{poke?.habitat?.name}</p>
           </div>
           <div>
             <h4>Type:</h4>
