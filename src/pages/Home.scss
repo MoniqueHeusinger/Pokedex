@@ -1,3 +1,28 @@
+
+// Border um die Cards
+
+fieldset {
+    margin: 0 5% 5% 5%;
+    padding: 80px 5%;
+    border: var(--pokemon-red) solid 6px;
+
+    legend {
+        padding: 0 50px;
+        text-align: center;
+
+        img {
+            width: 500px;
+        }
+    }
+}
+
 main {
     padding: 5%;
 }
+
+.loadingImg{
+    height: 30vh;
+    width: fit-content;
+    display: block;
+}
+

@@ -25,7 +25,7 @@ const PokemonGallery = () => {
 	};
 	return (
 		<section className='gallery'>
-			{loading
+			{loading 
 				? myData.data.map((pokemon) => (
 						<PokemonCard
 							key={uuidv4()}
@@ -41,6 +41,49 @@ const PokemonGallery = () => {
 						/>
 				  ))
 				: console.log("loading")}
+
+import LeftArrow from "../../assets/svg/LeftArrow";
+import RightArrow from "../../assets/svg/RightArrow";
+
+const PokemonGallery = () => {
+    const myData = useContext(FetchData);
+    const loading = useContext(LoadingDone);
+    const [startIndex, setStartIndex] = useState(0); 
+    const itemsPerPage = 12;
+
+    const handleNextClick = () => {
+    setStartIndex((prevIndex) => prevIndex + itemsPerPage);
+    };
+
+    const handlePrevClick = () => {
+    setStartIndex((prevIndex) => Math.max(0, prevIndex - itemsPerPage));
+    };
+
+return (
+    <section className="gallerWrapper" >
+    {myData.data.length === 1292 ? (
+        <>
+        <button onClick={handlePrevClick}><RightArrow/></button>
+		<section className="gallery">
+        {myData.data.slice(startIndex, startIndex + itemsPerPage).map((pokemon) => (
+            <PokemonCard
+            key={uuidv4()}
+            name={pokemon.species.name}
+            image={
+                pokemon.sprites.other["official-artwork"].front_shiny
+                ? pokemon.sprites.other["official-artwork"].front_shiny
+                : pokemon.sprites.other.home.front_default
+            }
+            id={pokemon.id}
+            />
+        ))}
+>>>>>>> main
+		</section>
+        <button onClick={handleNextClick}><LeftArrow/></button>
+        </>
+    ) : (
+        <img className="loadingImg" src="../../../public/img/loadingDragon.gif" alt="Loading..." />
+    )}
 		</section>
 	);
 };
