@@ -1,5 +1,5 @@
-import { useContext, useState } from "react";
-import { FetchData, LoadingDone } from "../../context/Context";
+import { useContext, useEffect, useState } from "react";
+import { FetchData, LoadingDone, ReadyToRender } from "../../context/Context";
 import { v4 as uuidv4 } from "uuid";
 import PokemonCard from "../pokemonCard/PokemonCard";
 import "./Gallery.scss";
@@ -8,22 +8,23 @@ import LeftArrow from "../../assets/svg/LeftArrow";
 import RightArrow from "../../assets/svg/RightArrow";
 
 const PokemonGallery = () => {
-    const myData = useContext(FetchData);
-    const loading = useContext(LoadingDone);
-    const [startIndex, setStartIndex] = useState(0); 
-    const itemsPerPage = 12;
+	const render = useContext(ReadyToRender);
+	const myData = useContext(FetchData);
+	const loading = useContext(LoadingDone);
+	const [startIndex, setStartIndex] = useState(0);
+	const itemsPerPage = 12;
 
-    const handleNextClick = () => {
-    setStartIndex((prevIndex) => prevIndex + itemsPerPage);
-    };
+	const handleNextClick = () => {
+		setStartIndex((prevIndex) => prevIndex + itemsPerPage);
+	};
 
-    const handlePrevClick = () => {
-    setStartIndex((prevIndex) => Math.max(0, prevIndex - itemsPerPage));
-    };
+	const handlePrevClick = () => {
+		setStartIndex((prevIndex) => Math.max(0, prevIndex - itemsPerPage));
+	};
 
 return (
     <section className="galleryWrapper" >
-    {myData.data.length === 1292 ? (
+    {myData.data ? (
         <>
         <button onClick={handlePrevClick}><RightArrow/></button>
 		<section className="gallery">
@@ -40,14 +41,7 @@ return (
             />
         ))}
 		</section>
-        <button onClick={handleNextClick}><LeftArrow/></button>
-        </>
-    ) : (
-        <img className="loadingImg" src="../../../public/img/loadingDragon.gif" alt="Loading..." />
-    )}
-    </section>
-);
-
+	);
 };
 
 export default PokemonGallery;
