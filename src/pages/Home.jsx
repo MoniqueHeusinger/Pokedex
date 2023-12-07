@@ -4,6 +4,7 @@ import "./Home.scss"
 const Home = () => {
 	return (
 		<main>
+
 			<fieldset>
 				<legend>
 					{/* Pokemon Logo */}
@@ -14,6 +15,7 @@ const Home = () => {
 				<PokemonGallery />
 			</fieldset>
 			
+>>>>>>>>> Temporary merge branch 2
 		</main>
 	);
 };
