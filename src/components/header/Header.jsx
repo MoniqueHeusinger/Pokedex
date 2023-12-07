@@ -39,12 +39,34 @@ const Header = () => {
 
 	return (
 		<header>
+			{/* ------------------------
+				Header 2. Version
+				------------------------ */}
+			{/* Navigation */}
 			<nav>
+				<NavLink>HoMe</NavLink>
+				{/* <NavLink>Types</NavLink> */}
+				<NavLink>TeaM</NavLink>
+			</nav>
+
+			{/* Suchleiste */}
+			<section>
+				<input
+					type='text'
+					placeholder='Pokémon Search...'
+					onChange={(e) => setSearchInput(e.target.value)}
+				/>
+			</section>
+
+			{/* ------------------------
+				Header 1. Version
+				------------------------ */}
+			{/* <nav>
 				<Link>
-					<img
+					 <img
 						src={logo}
 						alt=''
-					/>
+					/> 
 				</Link>
 				<div>
 					<NavLink>Home</NavLink>
@@ -58,7 +80,7 @@ const Header = () => {
 					placeholder='Search...'
 					onChange={(e) => setSearchInput(e.target.value)}
 				/>
-			</section>
+			</section> */}
 		</header>
 	);
 };
