@@ -3,6 +3,7 @@ import { FetchData, LoadingDone } from "../../context/Context";
 import { v4 as uuidv4 } from "uuid";
 import PokemonCard from "../pokemonCard/PokemonCard";
 import "./Gallery.scss";
+
 import LeftArrow from "../../assets/svg/LeftArrow";
 import RightArrow from "../../assets/svg/RightArrow";
 
@@ -46,6 +47,7 @@ return (
     )}
     </section>
 );
+
 };
 
 export default PokemonGallery;

@@ -1,0 +1,25 @@
+.Details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 5%;
+}
+
+.Details > div {
+  display: flex;
+  gap: 2rem;
+}
+
+.Details img {
+  max-width: 50%;
+  display: block;
+  padding: 1rem;
+  background-color: rgba(128, 128, 128, 0.521);
+  border-radius: 2rem;
+}
+/* diese Types sollte importiert sein */
+
+.Details button {
+  padding: 0.5rem 1rem;
+}
