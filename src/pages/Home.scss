@@ -1,9 +1,8 @@
-
 // Border um die Cards
 
 fieldset {
-    margin: 0 5% 5% 5%;
-    padding: 80px 5%;
+    margin: -5% 5% 5% 5%;
+    padding: 10px 5%;
     border: var(--pokemon-red) solid 6px;
 
     legend {
@@ -20,9 +19,9 @@ main {
     padding: 5%;
 }
 
-.loadingImg{
+.loadingImg {
     height: 30vh;
     width: fit-content;
     display: block;
+    margin: auto;
 }
-

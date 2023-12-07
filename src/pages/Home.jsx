@@ -16,9 +16,6 @@ const Home = () => {
 			</fieldset>
 			
 
-			<PokemonGallery />
-
-
 		</main>
 	);
 };
