@@ -8,6 +8,7 @@ import LeftArrow from "../../assets/svg/LeftArrow";
 import RightArrow from "../../assets/svg/RightArrow";
 
 const PokemonGallery = () => {
+	const render = useContext(ReadyToRender);
 	const myData = useContext(FetchData);
 	const loading = useContext(LoadingDone);
 	const [startIndex, setStartIndex] = useState(0);
@@ -23,7 +24,7 @@ const PokemonGallery = () => {
 
 	return (
 		<section className='gallerWrapper'>
-			{myData.data.length === 1292 ? (
+			{myData.data ? (
 				<>
 					<button onClick={handlePrevClick}>
 						<RightArrow />
@@ -46,6 +47,7 @@ const PokemonGallery = () => {
 													.front_default
 									}
 									id={pokemon.id}
+									abilities
 								/>
 							))}
 					</section>

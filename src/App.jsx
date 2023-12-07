@@ -2,19 +2,18 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Header from "./components/header/Header";
+import Details from "./components/Details/Details";
 import { useEffect, useState } from "react";
 import { FetchData, LoadingDone, ReadyToRender } from "./context/Context";
 
 function App() {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(false);
-	const [render, setRender] = useState(false);
-	useEffect(() => {
-		if (data.length === 1200) {
-			LoadingDone = true;
-		}
-	}, [data]);
+	const [render, setRender] = useState(0);
+	useEffect(() => {}, [data.render]);
+	console.log(render);
 	console.log(loading);
+
 	return (
 		<>
 			<ReadyToRender.Provider value={{ render, setRender }}>
@@ -26,6 +25,10 @@ function App() {
 							<Route
 								path='/'
 								element={<Home />}
+							/>
+							<Route
+								path='/details/:id'
+								element={<Details />}
 							/>
 						</Routes>
 					</FetchData.Provider>

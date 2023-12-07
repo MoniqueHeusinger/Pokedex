@@ -1,11 +1,12 @@
-import { Link, NavLink } from "react-router-dom";
-import logo from "../../../public/img/logo.gif";
+import { NavLink } from "react-router-dom";
 import "./Header.scss";
 import { useContext, useEffect, useState } from "react";
 import { names } from "../data/Names";
-import { FetchData, LoadingDone } from "../../context/Context";
+import { FetchData, LoadingDone, ReadyToRender } from "../../context/Context";
 
 const Header = () => {
+	const render = useContext(ReadyToRender);
+
 	//  array from urls
 	const [foundId, setFoundId] = useState([]);
 	useEffect(() => {
@@ -15,6 +16,7 @@ const Header = () => {
 	}, []);
 
 	//fetch all and save local
+	const [allPokemons, setAllPokemons] = useState([]);
 	const loadingState = useContext(LoadingDone);
 	const fetchState = useContext(FetchData);
 	useEffect(() => {
@@ -24,31 +26,47 @@ const Header = () => {
 				.then((response) => response.json())
 				.then((data) => {
 					pokemonArray.push(data);
-					fetchState.setData(
-						pokemonArray.sort((a, b) => a.id - b.id),
+					setAllPokemons(
+						[...pokemonArray].sort((a, b) => a.id - b.id),
+						console.log("fetch"),
 					);
-					console.log("fetch");
-					if (pokemonArray.length === 1292) {
-						loadingState.setLoading(true);
-					}
 				})
 				.catch((err) => console.log(err));
 		});
 	}, [foundId]);
+	useEffect(() => {
+		if (allPokemons.length === 1217) {
+			fetchState.setData(allPokemons);
+		}
+	}, [allPokemons]);
 
+	console.log(render);
 	console.log(fetchState);
 
 	//search function
 	const [searchInput, setSearchInput] = useState("");
 	useEffect(() => {
-		const searchResult = [];
-		fetchState.data.filter((pokemon) =>
-			pokemon.forms[0].name.includes(searchInput)
-				? searchResult.push(pokemon)
-				: false,
-		);
-		console.log(searchResult);
+		if (searchInput.length > 3) {
+			const searchResult = [];
+			[...allPokemons].filter((pokemon) =>
+				pokemon.forms[0].name.includes(searchInput)
+					? searchResult.push(pokemon)
+					: false,
+			);
+			fetchState.setData(searchResult);
+			console.log(fetchState);
+
+			render.setRender(searchResult.length);
+			console.log(render);
+		} else if (searchInput.length === 0) {
+			fetchState.setData(allPokemons);
+		}
 	}, [searchInput]);
+	useEffect(() => {
+		if (render === 1217) {
+			loadingState.setLoading(false);
+		}
+	}, [render]);
 	return (
 		<header>
 			{/* ------------------------
@@ -57,7 +75,7 @@ const Header = () => {
 			{/* Navigation */}
 			<nav>
 				<NavLink>HoMe</NavLink>
-				{/* <NavLink>Types</NavLink> */}
+
 				<NavLink>TeaM</NavLink>
 			</nav>
 
@@ -67,32 +85,9 @@ const Header = () => {
 					type='text'
 					placeholder='Pokémon Search...'
 					onChange={(e) => setSearchInput(e.target.value)}
+					value={searchInput}
 				/>
 			</section>
-
-			{/* ------------------------
-				Header 1. Version
-				------------------------ */}
-			{/* <nav>
-				<Link>
-					 <img
-						src={logo}
-						alt=''
-					/> 
-				</Link>
-				<div>
-					<NavLink>Home</NavLink>
-					<NavLink>Types</NavLink>
-					<NavLink>Our Team</NavLink>
-				</div>
-			</nav>
-			<section>
-				<input
-					type='text'
-					placeholder='Search...'
-					onChange={(e) => setSearchInput(e.target.value)}
-				/>
-			</section> */}
 		</header>
 	);
 };
