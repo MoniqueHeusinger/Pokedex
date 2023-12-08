@@ -37,6 +37,7 @@ const Header = () => {
 	useEffect(() => {
 		if (allPokemons.length === 1217) {
 			fetchState.setData(allPokemons);
+			render.setRender(1217);
 		}
 	}, [allPokemons]);
 
@@ -46,7 +47,7 @@ const Header = () => {
 	//search function
 	const [searchInput, setSearchInput] = useState("");
 	useEffect(() => {
-		if (searchInput.length > 3) {
+		if (searchInput.length > 0) {
 			const searchResult = [];
 			[...allPokemons].filter((pokemon) =>
 				pokemon.forms[0].name.includes(searchInput)
@@ -54,17 +55,17 @@ const Header = () => {
 					: false,
 			);
 			fetchState.setData(searchResult);
-			console.log(fetchState);
 
 			render.setRender(searchResult.length);
 			console.log(render);
 		} else if (searchInput.length === 0) {
 			fetchState.setData(allPokemons);
+			render.setRender(1217);
 		}
 	}, [searchInput]);
 	useEffect(() => {
 		if (render === 1217) {
-			loadingState.setLoading(false);
+			loadingState.setLoading(true);
 		}
 	}, [render]);
 	return (
