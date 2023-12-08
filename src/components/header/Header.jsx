@@ -75,7 +75,7 @@ const Header = () => {
 				------------------------ */}
 			{/* Navigation */}
 			<nav>
-				<NavLink>HoMe</NavLink>
+				<NavLink to='/'>HoMe</NavLink>
 				<NavLink to='/filter-options'>Types</NavLink>
 				<NavLink>TeaM</NavLink>
 			</nav>

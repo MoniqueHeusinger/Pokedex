@@ -33,6 +33,10 @@ header {
 			border: var(--pokemon-blue-dark) solid 3px;
 			font-size: 1.1rem;
 			background-color: rgb(255, 250, 234, 0.4);
+			color: var(--pokemon-blue-dark);
+			&:focus {
+				outline: none;
+			}
 		}
 	}
 }

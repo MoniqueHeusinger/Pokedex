@@ -11,11 +11,6 @@ import MoreMoves from "./components/moreDetails/MoreMoves";
 import MoreTypes from "./components/moreDetails/MoreTypes";
 import FilterOptions from "./components/filterOptions/FilterOptions";
 import FilterResults from "./components/filterResults/FilterResults";
-import MoreAbilities from "./components/moreDetails/MoreAbilities";
-import MoreMoves from "./components/moreDetails/MoreMoves";
-import MoreTypes from "./components/moreDetails/MoreTypes";
-import FilterOptions from "./components/filterOptions/FilterOptions";
-import FilterResults from "./components/filterResults/FilterResults";
 
 function App() {
 	const [data, setData] = useState([]);
