@@ -68,9 +68,3 @@ img {
     bottom: 0;
     background: url(../public/img/background.gif) center / contain no-repeat;
 }
-
-
-button {
-    background: transparent;
-    border: none;
-}

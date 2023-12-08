@@ -3,8 +3,14 @@ import "./App.css";
 import Home from "./pages/Home";
 import Header from "./components/header/Header";
 import Details from "./components/Details/Details";
+
 import { useEffect, useState } from "react";
 import { FetchData, LoadingDone, ReadyToRender } from "./context/Context";
+import MoreAbilities from "./components/moreDetails/MoreAbilities";
+import MoreMoves from "./components/moreDetails/MoreMoves";
+import MoreTypes from "./components/moreDetails/MoreTypes";
+import FilterOptions from "./components/filterOptions/FilterOptions";
+import FilterResults from "./components/filterResults/FilterResults";
 import MoreAbilities from "./components/moreDetails/MoreAbilities";
 import MoreMoves from "./components/moreDetails/MoreMoves";
 import MoreTypes from "./components/moreDetails/MoreTypes";

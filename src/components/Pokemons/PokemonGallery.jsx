@@ -21,10 +21,10 @@ const PokemonGallery = () => {
 	const handlePrevClick = () => {
 		setStartIndex((prevIndex) => Math.max(0, prevIndex - itemsPerPage));
 	};
-	console.log(render.render);
+
 	return (
-		<section className='gallerWrapper'>
-			{myData.data.length === render.render ? (
+		<section className='galleryWrapper'>
+			{myData.data ? (
 				<>
 					<button onClick={handlePrevClick}>
 						<RightArrow />
@@ -47,6 +47,7 @@ const PokemonGallery = () => {
 													.front_default
 									}
 									id={pokemon.id}
+									abilities
 								/>
 							))}
 					</section>

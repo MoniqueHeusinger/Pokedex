@@ -1,0 +1,11 @@
+.filterOptions {
+  padding: 3% 5%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.filterOptions div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
