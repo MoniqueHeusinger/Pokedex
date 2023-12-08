@@ -1,53 +1,61 @@
 .galleryWrapper {
-    // border: 3px green solid;
     display: flex;
-
+  
     .gallery {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        width: 100%;
-        place-items: center;
-        gap: 0.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: 100%;
+      place-items: center;
+      gap: 0.5rem;
+      
 
-        // ================
-        //      Card
-        // ================
-
-        a {
-            article {
-                margin: 0 auto;
-                padding: 0 5% 5% 5%;
-                width: 60%;
-                display: flex;
-                flex-direction: column;
-                border-radius: 1rem;
-            }
-
-            img {
-                // neue Version (ohne Podest)
-                margin: 0 auto;
-                flex-grow: 2;
-                width: 80%;
-            }
-
-            div {
-                display: flex;
-                justify-content: space-evenly;
-                gap: 2rem;
-                // Pokeman Ball Podest
-                // margin-top: 2rem;
-
-                h2 {
-                    margin-top: 10px;
-                    font-family: "Poppins-Bd";
-                    font-size: 1rem;
-                    text-transform: uppercase;
-                }
-            }
+  
+      a {
+        article {
+          margin: 0 auto;
+          padding: 0 5% 5% 5%;
+          width: 60%;
+          display: flex;
+          flex-direction: column;
+          border-radius: 1rem;
+          transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
         }
+  
+        img {
+          filter: drop-shadow(0 0 4px var(--pokemon-blue-dark));
+          margin: 0 auto;
+          flex-grow: 2;
+          width: 80%;
+        }
+  
+        div {
+          display: flex;
+          justify-content: space-evenly;
+          gap: 2rem;
+  
+          h2 {
+            margin-top: 10px;
+            font-family: "Poppins-Bd";
+            color: var(--pokemon-blue-dark);
+            font-size: 1rem;
+            text-transform: uppercase;
+          }
+        }
+      }
     }
+  
     button {
-        background: transparent;
-        border: none;
+      background: transparent;
+      border: none;
     }
-}
+  
+    .gallery:hover > a article {
+      filter: blur(3px);
+      transform: scale(0.9, 0.9);
+    }
+  
+    .gallery:hover > a article:hover {
+      transform: scale(1.5, 1.5);
+      filter: none;
+    }
+  }

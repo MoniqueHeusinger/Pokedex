@@ -22,10 +22,10 @@ const Details = () => {
 			.then((data) => setPoke(data));
 	}, [pokeParams]);
 
-
 	return (
 		<>
 			{singelData ? (
+
 				<>
         <img className="pokemonlogo" src={PokemonLogo} alt="Pokemon Logo" />
         <section className="details_wrapper">
@@ -82,8 +82,7 @@ const Details = () => {
                   <span></span>
                 )}
               </div>
-            
-              
+
               </div>
           </article>
 
@@ -192,6 +191,7 @@ const Details = () => {
       )}
     </>
   );
+
 };
 
 export default Details;
