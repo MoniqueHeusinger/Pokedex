@@ -1,0 +1,119 @@
+@font-face {
+    font-family: "Pokemon";
+    src: url("./assets/font/Pokemon_Solid.ttf");
+}
+
+@font-face {
+    font-family: "Pokemon-Hallow";
+    src: url("./assets/font/Pokemon_Hollow.ttf");
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("./assets/font/Poppins-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Poppins-Bd";
+    src: url("./assets/font/Poppins-Bold.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+cursor {
+    cursor: url(../public/img/closeballcursor.png), auto;
+    position: center;
+
+}
+
+:root {
+    --bg-light: rgb(255, 250, 234);
+    --bg-medium: #FFF7CD;
+    --pokemon-blue: #0571C0;
+    --pokemon-blue-two: #03566f;
+    --pokemon-blue-dark: #08346F;
+    --pokemon-yellow: #FFCC00;
+    --pokemon-yellow2: #ffd9000;
+    --pokemon-red: #760D00;
+    --bg-light-1:rgba(255, 247, 205, 1);
+    --bg-light-2:rgba(255, 204, 0, 1);
+    --bg-light-3:rgba(255, 151, 0, 1);
+    --bg-dark-1: rgb(35, 35, 35); 
+    --bg-dark-2: rgb(50, 50, 50); 
+    --bg-dark-3: rgb(70, 70, 70);
+}
+
+body {
+
+    background: radial-gradient(circle, var(--bg-light-1) 14%, var(--bg-light-2) 89%, var(--bg-light-3)100%);
+    min-height: 100vh;
+    font-family: "Poppins";
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* Pikachu Animated Sticker */
+.pokemonRight {
+    width: 350px;
+    height: 200px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background: url(../public/img/background.gif) center / contain no-repeat;
+}
+.darkMode{
+    --bg-light: rgb(255, 250, 234);
+    --bg-medium: #FFF7CD;
+    --pokemon-blue: #0571C0;
+    --pokemon-blue-two:rgba(0, 0, 0, 0.249);
+    --pokemon-blue-dark:#FFCC00;
+    --pokemon-yellow: #FFCC00;
+    --pokemon-yellow2: #ffd9000;
+    --pokemon-red: rgb(255, 106, 0);
+    --bg-light-1:rgb(70, 70, 70); 
+    --bg-light-2:rgb(50, 50, 50); 
+    --bg-light-3:rgb(35, 35, 35);
+    .pokemonRight{
+        background: url(../public/img/pikaDark.gif) center / 70% no-repeat ;
+        width: 320px;
+        height: 125px;
+        left: -90px;
+        bottom: 0;
+        mix-blend-mode: lighten;
+
+    }
+    legend {
+        img {
+            mix-blend-mode: hard-light;
+        }
+}
+    }
+
+.lightMode{
+    --bg-light: rgb(255, 250, 234);
+    --bg-medium: #FFF7CD;
+    --pokemon-blue: #0571C0;
+    --pokemon-blue-two: #03566f;
+    --pokemon-blue-dark: #08346F;
+    --pokemon-yellow: #FFCC00;
+    --pokemon-red: #760D00;
+    --bg-light-1:rgba(255, 247, 205, 1);
+    --bg-light-2:rgba(255, 204, 0, 1);
+    --bg-light-3:rgb(255, 153, 0);
+    .darkModeButton{
+        filter: grayscale(100) brightness(80%);
+    }
+}

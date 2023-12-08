@@ -3,6 +3,8 @@ import "./Header.scss";
 import { useContext, useEffect, useState } from "react";
 import { names } from "../data/Names";
 import { FetchData, LoadingDone, ReadyToRender } from "../../context/Context";
+import { useDarkmode } from "../../context/DarkModeContext";
+import DarkmodeIcon from "../../assets/svg/Darkmode";
 
 const Header = () => {
   const render = useContext(ReadyToRender);
@@ -67,18 +69,39 @@ const Header = () => {
       loadingState.setLoading(false);
     }
   }, [render]);
+
+  //=======DarkMode=================
+  const {isDarkMode,setIsDarkMode} = useDarkmode(false)
+  const body = document.body
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode)
+    if (!isDarkMode) {
+      body.classList.remove('lightMode')
+      body.classList.add('darkMode')
+    } else {
+      body.classList.remove('darkMode')
+      body.classList.add('lightMode')
+    }
+  } ;
+  useEffect(()=>{
+
+  },[isDarkMode])
+  console.log('Dark Mode Status:', isDarkMode);
+
   return (
-    <header>
+    <header >
       {/* ------------------------
 				Header 2. Version
 				------------------------ */}
       {/* Navigation */}
       <nav>
-        <NavLink>HoMe</NavLink>
+        <NavLink to='/'>HoMe</NavLink>
         <NavLink to="/filter-options">Types</NavLink>
-        <NavLink>TeaM</NavLink>
+        <div>
+          <button className="darkModeButton" onClick={toggleDarkMode}>
+          <DarkmodeIcon/></button>
+        </div>
       </nav>
-
       {/* Suchleiste */}
       <section>
         <input

@@ -47,7 +47,7 @@ const PokemonGallery = () => {
               ))}
           </section>
           <button onClick={handleNextClick}>
-            <LeftArrow />
+            <LeftArrow/>
           </button>
         </>
       ) : (

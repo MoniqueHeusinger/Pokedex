@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
+import "./GlobalModeStyle.scss"
 import Home from "./pages/Home";
 import Header from "./components/header/Header";
 import Details from "./components/Details/Details";
@@ -11,6 +12,7 @@ import MoreMoves from "./components/moreDetails/MoreMoves";
 import MoreTypes from "./components/moreDetails/MoreTypes";
 import FilterOptions from "./components/filterOptions/FilterOptions";
 import FilterResults from "./components/filterResults/FilterResults";
+import { DarkModeProvider } from "./context/DarkModeContext";
 
 function App() {
 	const [data, setData] = useState([]);
@@ -20,11 +22,17 @@ function App() {
 	console.log(render);
 	console.log(loading);
 
+
+	const [isDarkMode, setIsDarkMode] = useState(false);
+
+
 	return (
-		<>
+		<><DarkModeProvider>
+
 			<ReadyToRender.Provider value={{ render, setRender }}>
 				<LoadingDone.Provider value={{ loading, setLoading }}>
 					<FetchData.Provider value={{ data, setData }}>
+					
 						<div className="pokemonRight"></div>
           <Header />
           <Routes>
@@ -39,6 +47,7 @@ function App() {
 					</FetchData.Provider>
 				</LoadingDone.Provider>
 			</ReadyToRender.Provider>
+			</DarkModeProvider>
 		</>
 	);
 }
