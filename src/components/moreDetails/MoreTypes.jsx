@@ -12,9 +12,8 @@ const MoreTypes = () => {
   );
 
   return (
-    <div>
-      <h5>All Moves</h5>
-      <p>
+    <div >
+      <p className="moreWrapper">
         {singelData ? (
           singelData.types.map((typeItem, index) => (
             <p key={index}>{typeItem.type.name} </p>

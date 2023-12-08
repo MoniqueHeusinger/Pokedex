@@ -12,9 +12,8 @@ const MoreAbilities = () => {
   console.log(singelData);
 
   return (
-    <div>
-      <h5>All Abilities</h5>
-      <p>
+    <div >
+      <p className="moreWrapper">
         {singelData ? (
           singelData.abilities.map((abilityItem, index) => (
             <p key={index}>{abilityItem.ability.name} </p>

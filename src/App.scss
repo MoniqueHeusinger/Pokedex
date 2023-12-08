@@ -117,3 +117,17 @@ img {
         filter: grayscale(100) brightness(80%);
     }
 }
+
+.moreWrapper{
+    width: 80%;
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    
+    p{
+        color: var(--pokemon-blue-dark);
+    }
+}

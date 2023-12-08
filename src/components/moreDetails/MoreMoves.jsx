@@ -11,9 +11,8 @@ const MoreMoves = () => {
   );
   console.log(singelData);
   return (
-    <div>
-      <h5>All Moves</h5>
-      <p>
+    <div >
+      <p className="moreWrapper">
         {singelData ? (
           singelData.moves.map((moveItem, index) => (
             <p key={index}>{moveItem.move.name} </p>

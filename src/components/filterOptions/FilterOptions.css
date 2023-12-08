@@ -1,7 +1,8 @@
 .filterOptions {
   padding: 3% 5%;
-  margin: 0 auto;
+  margin: 10% auto;
   text-align: center;
+  width: 50%;
 }
 
 .filterOptions div {
@@ -17,4 +18,8 @@
   font-size: 1.5rem;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.filterOptions div p:hover{
+  transform: scale(1.1);
 }
