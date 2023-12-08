@@ -1,50 +1,56 @@
 // Border um die Cards
 
 fieldset {
-    margin: -5% 5% 5% 5%;
-    padding: 10px 5%;
-    border: var(--pokemon-red) solid 6px;
+	border: var(--pokemon-red) solid 6px;
+	display: flex;
+	width: 85%;
+	margin: 0 auto;
+	padding: 0 2% 2% 2%;
 
-    legend {
-        padding: 0 50px;
-        text-align: center;
+	legend {
+		margin: 0 auto;
+		width: 420px;
+		height: 180px;
+		filter: drop-shadow(0 0 8px var(--pokemon-blue-dark));
+		text-align: center;
+		background: url(../../public/img/pokemon_logo.gif) center / contain
+			no-repeat;
+	}
+	button svg {
+		width: 70px;
+		height: 70px;
 
-        img {
-            width: 500px;
-            filter: drop-shadow(0 0 8px var(--pokemon-blue-dark));
-        }
+		filter: drop-shadow(2px 6px 4px 0px rgba(0, 0, 0, 0.191));
+		padding: 8px;
+		text-align: center;
+		transition: all 0.3s ease-in-out;
+	}
 }
-button svg {
-    width: 80px;
-    height: 80px;
-    margin: 6px;
-    filter: drop-shadow(2px 6px 4px 0px rgba(0, 0, 0, 0.191));
-    padding: 16px;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
+.leftArrow {
+	&:hover {
+		transform: scale(1.1) rotate(-90deg);
+		filter: drop-shadow(4px 11px 4px 0px rgba(0, 0, 0, 0.191));
+	}
 }
-}
-.leftArrow{
-
-    &:hover {
-        transform: scale(1.1) rotate(-90deg);
-        filter: drop-shadow(4px 11px 4px 0px rgba(0, 0, 0, 0.191));
-    }
-}
-.rightArrow{
-    &:hover {
-        transform: scale(1.1) rotate(90deg);
-        filter: drop-shadow(4px 11px 4px 0px rgba(0, 0, 0, 0.191));
-    }
-}
-
-main {
-    padding: 5%;
+.rightArrow {
+	&:hover {
+		transform: scale(1.1) rotate(90deg);
+		filter: drop-shadow(4px 11px 4px 0px rgba(0, 0, 0, 0.191));
+	}
 }
 
 .loadingImg {
-    height: 30vh;
-    width: fit-content;
-    display: block;
-    margin: 0 auto;
+	background: url(../../public/img/loadingDragon.gif) center / contain
+		no-repeat;
+	height: 40vh;
+	aspect-ratio: 2/2;
+	display: block;
+	margin: 0 auto;
+}
+main {
+	padding: 0 5% 5% 5%;
+}
+
+.filterField {
+	width: 80%;
 }

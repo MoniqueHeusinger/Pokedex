@@ -30,7 +30,6 @@ const Header = () => {
 					pokemonArray.push(data);
 					setAllPokemons(
 						[...pokemonArray].sort((a, b) => a.id - b.id),
-						console.log("fetch"),
 					);
 				})
 				.catch((err) => console.log(err));
@@ -42,9 +41,6 @@ const Header = () => {
 			render.setRender(1217);
 		}
 	}, [allPokemons]);
-
-	console.log(render);
-	console.log(fetchState);
 
 	//search function
 	const [searchInput, setSearchInput] = useState("");
@@ -59,7 +55,6 @@ const Header = () => {
 			fetchState.setData(searchResult);
 
 			render.setRender(searchResult.length);
-			console.log(render);
 		} else if (searchInput.length === 0) {
 			fetchState.setData(allPokemons);
 			render.setRender(1217);
@@ -71,24 +66,20 @@ const Header = () => {
 		}
 	}, [render]);
 
-  //=======DarkMode=================
-  const {isDarkMode,setIsDarkMode} = useDarkmode(false)
-  const body = document.body
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode)
-    if (!isDarkMode) {
-      body.classList.remove('lightMode')
-      body.classList.add('darkMode')
-    } else {
-      body.classList.remove('darkMode')
-      body.classList.add('lightMode')
-    }
-  } ;
-  useEffect(()=>{
-
-  },[isDarkMode])
-  console.log('Dark Mode Status:', isDarkMode);
-
+	//=======DarkMode=================
+	const { isDarkMode, setIsDarkMode } = useDarkmode(false);
+	const body = document.body;
+	const toggleDarkMode = () => {
+		setIsDarkMode(!isDarkMode);
+		if (!isDarkMode) {
+			body.classList.remove("lightMode");
+			body.classList.add("darkMode");
+		} else {
+			body.classList.remove("darkMode");
+			body.classList.add("lightMode");
+		}
+	};
+	useEffect(() => {}, [isDarkMode]);
 
 	return (
 		<header>
@@ -100,9 +91,12 @@ const Header = () => {
 				<NavLink to='/'>HoMe</NavLink>
 				<NavLink to='/filter-options'>Types</NavLink>
 				<div>
-          <button className="darkModeButton" onClick={toggleDarkMode}>
-          <DarkmodeIcon/></button>
-        </div>
+					<button
+						className='darkModeButton'
+						onClick={toggleDarkMode}>
+						<DarkmodeIcon />
+					</button>
+				</div>
 			</nav>
 
 			{/* Suchleiste */}
@@ -116,7 +110,6 @@ const Header = () => {
 			</section>
 		</header>
 	);
-
 };
 
 export default Header;

@@ -1,109 +1,97 @@
+// .gallery {
+// 	display: grid;
+// 	grid-template-columns: repeat(4, 1fr);
+// 	width: 100%;
+// 	place-items: center;
+// 	gap: 0.5rem;
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      width: 100%;
-      place-items: center;
-      gap: 0.5rem;
+// 	a {
+// 		article {
+// 			margin: 0 auto;
+// 			padding: 0 5% 5% 5%;
+// 			width: 60%;
+// 			display: flex;
+// 			flex-direction: column;
+// 			border-radius: 1rem;
+// 			transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+// 		}
 
-  
-      a {
-        article {
-          margin: 0 auto;
-          padding: 0 5% 5% 5%;
-          width: 60%;
-          display: flex;
-          flex-direction: column;
-          border-radius: 1rem;
-          transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-        }
-  
-        img {
-          filter: drop-shadow(0 0 4px var(--pokemon-blue-dark));
-          margin: 0 auto;
-          flex-grow: 2;
-          width: 80%;
-        }
-  
-        div {
-          display: flex;
-          justify-content: space-evenly;
-          gap: 2rem;
-  
-          h2 {
-            margin-top: 10px;
-            font-family: "Poppins-Bd";
-            color: var(--pokemon-blue-dark);
-            font-size: 1rem;
-            text-transform: uppercase;
-          }
-        }
-      }
-    
-  
+// 		img {
+// 			filter: drop-shadow(0 0 4px var(--pokemon-blue-dark));
+// 			margin: 0 auto;
+// 			flex-grow: 2;
+// 			width: 80%;
+// 		}
 
-  
-    .gallery:hover > a article {
-      filter: blur(3px);
-      transform: scale(0.9, 0.9);
-    }
-  
-    .gallery:hover > a article:hover {
-      transform: scale(1.5, 1.5);
-      filter: none;
-    }
-  
-  }
+// 		div {
+// 			display: flex;
+// 			justify-content: space-evenly;
+// 			gap: 2rem;
 
-fieldset {
-  display: flex;
-  margin: 0% 5% 5% 5%;
-  padding: 10px 5%;
-  border: var(--pokemon-red) solid 6px;
-  button {
-    background: transparent;
-    border: none;
-  }
+// 			h2 {
+// 				margin-top: 10px;
+// 				font-family: "Poppins-Bd";
+// 				color: var(--pokemon-blue-dark);
+// 				font-size: 1rem;
+// 				text-transform: uppercase;
+// 			}
+// 		}
+// 	}
 
-  legend {
-      padding: 0 50px;
-      text-align: center;
+// 	.gallery:hover > a article {
+// 		filter: blur(3px);
+// 		transform: scale(0.9, 0.9);
+// 	}
 
-      img {
-          width: 500px;
-          filter: drop-shadow(0 0 8px var(--pokemon-blue-dark));
-      }
-}
-button svg {
-  width: 80px;
-  height: 80px;
-  margin: 6px;
-  filter: drop-shadow(2px 6px 4px 0px rgba(0, 0, 0, 0.191));
-  padding: 16px;
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-}
-}
-.leftArrow{
+// 	.gallery:hover > a article:hover {
+// 		transform: scale(1.5, 1.5);
+// 		filter: none;
+// 	}
+// }
 
-  &:hover {
-      transform: scale(1.1) rotate(-90deg);
-      filter: drop-shadow(4px 11px 4px 0px rgba(0, 0, 0, 0.191));
-  }
-}
-.rightArrow{
-  &:hover {
-      transform: scale(1.1) rotate(90deg);
-      filter: drop-shadow(4px 11px 4px 0px rgba(0, 0, 0, 0.191));
-  }
-}
+// fieldset {
+// 	display: flex;
 
-main {
-  padding: 5%;
-}
+// 	border: var(--pokemon-red) solid 6px;
+// 	button {
+// 		background: transparent;
+// 		border: none;
+// 	}
 
-.loadingImg {
-  height: 30vh;
-  display: block;
-  margin: auto;
-}
+// 	legend {
+// 		padding: 0 50px;
+// 		text-align: center;
+
+// 		img {
+// 			width: 500px;
+// 			filter: drop-shadow(0 0 8px var(--pokemon-blue-dark));
+// 		}
+// 	}
+// 	button svg {
+// 		width: 80px;
+// 		height: 80px;
+// 		margin: 6px;
+// 		filter: drop-shadow(2px 6px 4px 0px rgba(0, 0, 0, 0.191));
+// 		padding: 16px;
+// 		text-align: center;
+// 		transition: all 0.3s ease-in-out;
+// 	}
+// }
+// .leftArrow {
+// 	&:hover {
+// 		transform: scale(1.1) rotate(-90deg);
+// 		filter: drop-shadow(4px 11px 4px 0px rgba(0, 0, 0, 0.191));
+// 	}
+// }
+// .rightArrow {
+// 	&:hover {
+// 		transform: scale(1.1) rotate(90deg);
+// 		filter: drop-shadow(4px 11px 4px 0px rgba(0, 0, 0, 0.191));
+// 	}
+// }
+
+// .loadingImg {
+// 	height: 30vh;
+// 	display: block;
+// 	margin: auto;
+// }
