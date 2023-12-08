@@ -32,18 +32,40 @@ function App() {
 			<ReadyToRender.Provider value={{ render, setRender }}>
 				<LoadingDone.Provider value={{ loading, setLoading }}>
 					<FetchData.Provider value={{ data, setData }}>
-					
-						<div className="pokemonRight"></div>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/details/:id" element={<Details />} />
-            <Route path="/more-abilities/:id" element={<MoreAbilities />} />
-            <Route path="/more-moves/:id" element={<MoreMoves />} />
-            <Route path="/more-types/:id" element={<MoreTypes />} />
-            <Route path="/filter-options" element={<FilterOptions />} />
-            <Route path="/filter-results/:id" element={<FilterResults />} />
-          </Routes>
+
+						<div className='pokemonRight'></div>
+						<Header />
+						<Routes>
+							<Route
+								path='/'
+								element={<Home />}
+							/>
+							<Route
+								path='/details/:id'
+								element={<Details />}
+							/>
+							<Route
+								path='/more-abilities/:id'
+								element={<MoreAbilities />}
+							/>
+							<Route
+								path='/more-moves/:id'
+								element={<MoreMoves />}
+							/>
+							<Route
+								path='/more-types/:id'
+								element={<MoreTypes />}
+							/>
+							<Route
+								path='/filter-options'
+								element={<FilterOptions />}
+							/>
+							<Route
+								path='/filter-results/:id'
+								element={<FilterResults />}
+							/>
+						</Routes>
+
 					</FetchData.Provider>
 				</LoadingDone.Provider>
 			</ReadyToRender.Provider>

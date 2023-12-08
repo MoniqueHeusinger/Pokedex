@@ -7,68 +7,69 @@ import { useDarkmode } from "../../context/DarkModeContext";
 import DarkmodeIcon from "../../assets/svg/Darkmode";
 
 const Header = () => {
-  const render = useContext(ReadyToRender);
+	const render = useContext(ReadyToRender);
 
-  //  array from urls
-  const [foundId, setFoundId] = useState([]);
-  useEffect(() => {
-    const urls = [];
-    names.forEach((name) => urls.push(name.url));
-    setFoundId(urls);
-  }, []);
+	//  array from urls
+	const [foundId, setFoundId] = useState([]);
+	useEffect(() => {
+		const urls = [];
+		names.forEach((name) => urls.push(name.url));
+		setFoundId(urls);
+	}, []);
 
-  //fetch all and save local
-  const [allPokemons, setAllPokemons] = useState([]);
-  const loadingState = useContext(LoadingDone);
-  const fetchState = useContext(FetchData);
-  useEffect(() => {
-    const pokemonArray = [];
-    foundId.forEach((url) => {
-      fetch(`${url}`)
-        .then((response) => response.json())
-        .then((data) => {
-          pokemonArray.push(data);
-          setAllPokemons(
-            [...pokemonArray].sort((a, b) => a.id - b.id),
-            console.log("fetch")
-          );
-        })
-        .catch((err) => console.log(err));
-    });
-  }, [foundId]);
-  useEffect(() => {
-    if (allPokemons.length === 1217) {
-      fetchState.setData(allPokemons);
-    }
-  }, [allPokemons]);
+	//fetch all and save local
+	const [allPokemons, setAllPokemons] = useState([]);
+	const loadingState = useContext(LoadingDone);
+	const fetchState = useContext(FetchData);
+	useEffect(() => {
+		const pokemonArray = [];
+		foundId.forEach((url) => {
+			fetch(`${url}`)
+				.then((response) => response.json())
+				.then((data) => {
+					pokemonArray.push(data);
+					setAllPokemons(
+						[...pokemonArray].sort((a, b) => a.id - b.id),
+						console.log("fetch"),
+					);
+				})
+				.catch((err) => console.log(err));
+		});
+	}, [foundId]);
+	useEffect(() => {
+		if (allPokemons.length === 1217) {
+			fetchState.setData(allPokemons);
+			render.setRender(1217);
+		}
+	}, [allPokemons]);
 
-  console.log(render);
-  console.log(fetchState);
+	console.log(render);
+	console.log(fetchState);
 
-  //search function
-  const [searchInput, setSearchInput] = useState("");
-  useEffect(() => {
-    if (searchInput.length > 3) {
-      const searchResult = [];
-      [...allPokemons].filter((pokemon) =>
-        pokemon.forms[0].name.includes(searchInput)
-          ? searchResult.push(pokemon)
-          : false
-      );
-      fetchState.setData(searchResult);
-      console.log(fetchState);
+	//search function
+	const [searchInput, setSearchInput] = useState("");
+	useEffect(() => {
+		if (searchInput.length > 0) {
+			const searchResult = [];
+			[...allPokemons].filter((pokemon) =>
+				pokemon.forms[0].name.includes(searchInput)
+					? searchResult.push(pokemon)
+					: false,
+			);
+			fetchState.setData(searchResult);
 
-      render.setRender(searchResult.length);
-      console.log(render);
-    } else if (searchInput.length === 0) {
-      fetchState.setData(allPokemons);
-    }
-  }, [searchInput]);
-  useEffect(() => {
-    if (render === 1217) {
-      loadingState.setLoading(false);
-    }
-  }, [render]);
+			render.setRender(searchResult.length);
+			console.log(render);
+		} else if (searchInput.length === 0) {
+			fetchState.setData(allPokemons);
+			render.setRender(1217);
+		}
+	}, [searchInput]);
+	useEffect(() => {
+		if (render === 1217) {
+			loadingState.setLoading(true);
+		}
+	}, [render]);
 
   //=======DarkMode=================
   const {isDarkMode,setIsDarkMode} = useDarkmode(false)
@@ -88,31 +89,34 @@ const Header = () => {
   },[isDarkMode])
   console.log('Dark Mode Status:', isDarkMode);
 
-  return (
-    <header >
-      {/* ------------------------
+
+	return (
+		<header>
+			{/* ------------------------
 				Header 2. Version
 				------------------------ */}
-      {/* Navigation */}
-      <nav>
-        <NavLink to='/'>HoMe</NavLink>
-        <NavLink to="/filter-options">Types</NavLink>
-        <div>
+			{/* Navigation */}
+			<nav>
+				<NavLink to='/'>HoMe</NavLink>
+				<NavLink to='/filter-options'>Types</NavLink>
+				<div>
           <button className="darkModeButton" onClick={toggleDarkMode}>
           <DarkmodeIcon/></button>
         </div>
-      </nav>
-      {/* Suchleiste */}
-      <section>
-        <input
-          type="text"
-          placeholder="Pokémon Search..."
-          onChange={(e) => setSearchInput(e.target.value)}
-          value={searchInput}
-        />
-      </section>
-    </header>
-  );
+			</nav>
+
+			{/* Suchleiste */}
+			<section>
+				<input
+					type='text'
+					placeholder='Pokémon Search...'
+					onChange={(e) => setSearchInput(e.target.value)}
+					value={searchInput}
+				/>
+			</section>
+		</header>
+	);
+
 };
 
 export default Header;
