@@ -6,6 +6,15 @@
 
 .filterOptions div {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
+}
+.filterOptions div p {
+  display: inline-block;
+  color: white;
+  width: 160px;
+  padding: 0.25rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
 }
