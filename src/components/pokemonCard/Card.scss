@@ -1,0 +1,38 @@
+.card {
+    border: 1px solid none;
+    position: relative;
+    .icon {
+      
+        animation: floatAnimation 2s infinite alternate; 
+      
+        @keyframes floatAnimation {
+          0% {
+            transform: translateY(0); 
+          }
+          100% {
+            transform: translateY(-10px); 
+          }
+        }
+      
+        &:hover {
+          animation: none; 
+          transform: translateY(-10px); 
+        }
+      }
+      
+
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+  
+    .name {
+      z-index: 1;
+    }
+  }
